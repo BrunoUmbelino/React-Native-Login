@@ -20,7 +20,7 @@ export const Title = styled.Text`
   color: #fff;
   font-size: 35px;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `;
 
 export const Input = styled.TextInput`
@@ -51,5 +51,4 @@ export const Error = styled.Text`
   color: #e62b2b;
   font-size: 20px;
   margin-bottom: 10px;
-  display: none;
 `;

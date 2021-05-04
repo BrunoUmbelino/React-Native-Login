@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { StatusBar } from "react-native";
-import { AuthContext } from "../../contexts/AuthContext";
 
 import {
   ButtonSubmit,
@@ -13,11 +13,38 @@ import {
 } from "./style";
 
 function Login({ navigation }) {
-  const { login } = useContext(AuthContext);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [showError, setshowError] = useState("");
+
+
+  function clearData(){
+    setEmail("")
+    setPassword("")
+    setshowError("")
+  }
+
+  async function auth(email, password) {
+    try {
+      const response = await axios({
+        method: "post",
+        url: "https://delivery.leaderaplicativos.com.br/api/api-token-auth/",
+        data: {
+          email: email,
+          password: password,
+        },
+      });
+
+      if (response.data.token !== null) {
+        navigation.navigate("Main");
+        clearData()
+      } 
+    } catch (err) {
+      setshowError("username or password is invalid");
+      console.log(err);
+    }
+  }
+
 
   return (
     <>
@@ -25,7 +52,7 @@ function Login({ navigation }) {
         <Container>
           <StatusBar style="light" />
           <Title>Login</Title>
-          <Error>Erro</Error>
+          <Error>{showError}</Error>
           <Input
             placeholderTextColor="#fff"
             placeholder="E-mail"
@@ -42,8 +69,8 @@ function Login({ navigation }) {
           />
           <ButtonSubmit
             onPress={() => {
-              login();
-            }}
+              auth(email, password);
+                         }}
           >
             <TextSubmit>Entrar</TextSubmit>
           </ButtonSubmit>
