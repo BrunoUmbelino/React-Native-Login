@@ -17,11 +17,10 @@ function Login({ navigation }) {
   const [password, setPassword] = useState("");
   const [showError, setshowError] = useState("");
 
-
-  function clearData(){
-    setEmail("")
-    setPassword("")
-    setshowError("")
+  function clearData() {
+    setEmail("");
+    setPassword("");
+    setshowError("");
   }
 
   async function auth(email, password) {
@@ -37,14 +36,13 @@ function Login({ navigation }) {
 
       if (response.data.token !== null) {
         navigation.navigate("Main");
-        clearData()
-      } 
+        clearData();
+      }
     } catch (err) {
       setshowError("username or password is invalid");
       console.log(err);
     }
   }
-
 
   return (
     <>
@@ -70,7 +68,7 @@ function Login({ navigation }) {
           <ButtonSubmit
             onPress={() => {
               auth(email, password);
-                         }}
+            }}
           >
             <TextSubmit>Entrar</TextSubmit>
           </ButtonSubmit>

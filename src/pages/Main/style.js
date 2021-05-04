@@ -9,8 +9,9 @@ export const Container = styled.View`
 `;
 
 export const Text = styled.Text`
-  color: #fff;
+  color: #643cdb;
   font-size: 30px;
+  margin-bottom: 30px;
 `;
 
 export const IconWrap = styled.View`
