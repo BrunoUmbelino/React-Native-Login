@@ -70,7 +70,7 @@ function Login({ navigation }) {
               auth(email, password);
             }}
           >
-            <TextSubmit>Entrar</TextSubmit>
+            <TextSubmit>Enter</TextSubmit>
           </ButtonSubmit>
         </Container>
       </KeyboradView>

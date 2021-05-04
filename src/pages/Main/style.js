@@ -11,6 +11,7 @@ export const Container = styled.View`
 export const Text = styled.Text`
   color: #643cdb;
   font-size: 30px;
+  font-weight: 700;
   margin-bottom: 30px;
 `;
 

@@ -16,7 +16,7 @@ function Main({ navigation }) {
             onPress={() => navigation.navigate("Login")}
           />
         </IconWrap>
-        <Text>Access Released</Text>
+        <Text>ACCESS RELEASED</Text>
         <Image
           source={require("../../../assets/unlock.png")}
           style={{ width: 200, height: 200 }}
