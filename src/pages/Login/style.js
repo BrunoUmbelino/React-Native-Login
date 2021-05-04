@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components/native";
 
 export const KeyboradView = styled.KeyboardAvoidingView`
@@ -7,6 +6,7 @@ export const KeyboradView = styled.KeyboardAvoidingView`
   align-items: center;
   justify-content: center;
   background-color: #181818;
+  flex: 1;
 `;
 
 export const Container = styled.View`
@@ -45,4 +45,11 @@ export const ButtonSubmit = styled.TouchableOpacity`
 export const TextSubmit = styled.Text`
   color: #fff;
   font-size: 20px;
+`;
+
+export const Error = styled.Text`
+  color: #e62b2b;
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: none;
 `;

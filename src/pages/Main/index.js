@@ -1,9 +1,22 @@
 import React from "react";
+import { Container, Text, IconWrap } from "./style";
+import { LogoutOutlined } from "@ant-design/icons";
+import { Icon } from "react-native-elements";
 
-function Main() {
+function Main({ navigation }) {
   return (
     <>
-      <Text>Main Page</Text>
+      <Container>
+        <IconWrap>
+          <Icon
+            name="logout"
+            color="#fff"
+            size={35}
+            onPress={() => navigation.navigate("Login")}
+          />
+        </IconWrap>
+        <Text>Access released</Text>
+      </Container>
     </>
   );
 }
