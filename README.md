@@ -14,3 +14,7 @@ This project was created with React Native + Expo, has a simple login screen wit
 - React Navigation
 - Expo
 
+---
+
+    email": "usuario@teste.com"
+    password": "usuario_test_@@"
