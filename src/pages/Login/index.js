@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { StatusBar } from "react-native";
+import { URL_API } from "@env";
 
 import {
   ButtonSubmit,
@@ -13,6 +14,7 @@ import {
 } from "./style";
 
 function Login({ navigation }) {
+  console.log(URL_API);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setshowError] = useState("");
@@ -27,7 +29,7 @@ function Login({ navigation }) {
     try {
       const response = await axios({
         method: "post",
-        url: "https://delivery.leaderaplicativos.com.br/api/api-token-auth/",
+        url: `${URL_API}`,
         data: {
           email: email,
           password: password,
